@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView, CreateView
-
 from . models import Post
+from . forms import PostForm
 
 # Create your views here.
 class HomeView(ListView):
@@ -13,5 +13,6 @@ class ArticleDetailView(DetailView):
 
 class AddPostView(CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'blog/add_post.html'
-    fields = '__all__'
+    #fields = '__all__'
